@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'pages/css/style.css' %}">
+		<script  type="text/javascript" src="{% static 'pages/js/raveinline.js' %}"></script>
+		<title>TECHERO</title>
+	</head>
+	<body>
+		
+		<div id="heading"><h1>UberX</h1></div>
+		{% block content %}
+		<center><div id="service-detail"><h2>Port Harcourt To Warri </h2>
+			<h3>Price: 2000</h3>
+			<h3>Time: 2 hrs</h3>
+		</div>
+		<form>
+			<script type="text/javascript" src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
+			<button type="button" onClick="payWithRave()" id="paybtn" >Pay Now</button>
+		</form></center>
+		{% endblock content%}	
+	</body>
+</html>
