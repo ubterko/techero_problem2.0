@@ -6,7 +6,7 @@ class UserManager(BaseUserManager):
         user = self.model(email=self.normalize_email(email), **extra_fields)
         user.set_password(password)
         user.is_active=True
-        user.save(self._db)
+        user.save(using=self._db)
 
         return user
 
@@ -14,7 +14,7 @@ class UserManager(BaseUserManager):
         user=self.create_user(email=email, password=password)
         user.is_staff=True
         user.is_superuser=True
-        user.save(self._db)
+        user.save(using=self._db)
 
         return user
 
