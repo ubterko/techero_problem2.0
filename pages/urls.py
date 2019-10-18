@@ -9,5 +9,7 @@ urlpatterns = [
 	path('api/views/create_patron', views.CreateUserPatron.as_view(), name='create_patron'),
 	path('api/views/create_proprietor', views.CreateUserProprietor.as_view(), name='create_proprietor'),
 	path('api/views/proprietor_list', views.Proprietors.as_view(), name='proprietor_list'),
-	path('api/views/auth', views.AuthView.as_view(), name='token')
+	path('api/views/auth', views.AuthView.as_view(), name='auth'),
+	path('api/views/proprietor_list/<int:pk>/', views.Detail.as_view(), name='detail'),
+	path('api/views/trip',views.SetTrip.as_view())
 ]

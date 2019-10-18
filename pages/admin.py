@@ -18,3 +18,6 @@ class UserAdmin(BaseUserAdmin):
         )
 
 admin.site.register(models.User, UserAdmin)
+admin.site.register(models.Patron)
+admin.site.register(models.Proprietor)
+admin.site.register(models.trip)
