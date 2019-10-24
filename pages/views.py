@@ -30,16 +30,12 @@ class AuthView(ObtainAuthToken):
 
 
 class Proprietors(generics.ListAPIView):
-	serializer_class = serializers.ProprietorSerializer
+	serializer_class = serializers.ProprietorDetail
 	queryset = Proprietor.objects.all()
 
 
-class Detail(generics.RetrieveAPIView):
-	serializer_class = serializers.ProprietorSerializer
+class UMain(generics.RetrieveAPIView):
+	serializer_class = serializers.ProprietorDetail
 	queryset = User.objects.all()
 
-
-class SetTrip(generics.CreateAPIView):
-	"""change this to retrieve update api view, better still Detail should
-	be retrieve update view then try to get the proprietor"""
-	serializer_class = serializers.SetTripSerializer
+#class UMain(generics.RetrieveAPI)
