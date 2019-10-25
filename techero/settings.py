@@ -19,7 +19,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+#owned apps
     'pages',
+    'api',
+#third party
+    'rest_framework',
+    'rest_framework.authtoken',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

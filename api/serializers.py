@@ -1,9 +1,18 @@
 from rest_framework import serializers
 from django.utils.translation import gettext as _
 from django.contrib.auth import get_user_model, authenticate
-from . import models
+from pages import models
 
-class CreateProprietorSerializer(serializers.ModelSerializer):
+
+class CreateUser(serializers.ModelSerializer):
+    class Meta:
+        model = get_user_model
+        fields = ['email','password']
+
+    def create(self, validated_data):
+        return get_user_model().objects.create_user(**validated_data)
+
+class CreateProprietor(serializers.ModelSerializer):
     """This is the serializer for creating proprietor user"""
 
     class Meta:
@@ -16,8 +25,7 @@ class CreateProprietorSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return get_user_model().objects.create_user(**validated_data)
 
-
-class CreatePatronSerializer(serializers.ModelSerializer):
+class CreatePatron(serializers.ModelSerializer):
     """This is the serializer for creating patron user"""
 
     class Meta:
@@ -26,9 +34,6 @@ class CreatePatronSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return get_user_model().objects.create_user(**validated_data)
-
-
-
 
 class AuthTokenSerializer(serializers.Serializer):
     """Serializer for creating a token for authentication"""
@@ -53,14 +58,28 @@ class AuthTokenSerializer(serializers.Serializer):
         attrs['user'] = user
         return attrs
 
+#class ProprietorDashboard(serializers.ModelSerializer):
+#    class Meta:
+#        model = models.Proprietor
+#        fields = ['name','liscence_no','']
 
-class ProprietorDetail(serializers.ModelSerializer):
+
+class ProprietorProfile(serializers.ModelSerializer):
     class Meta:
         model = models.Proprietor
-        fields = ['user','car_model','liscence_no']
+        fields = ['name','sex','age','city','car_model','liscence_no']
 
+class PatronProfile(serializers.ModelSerializer):
+    class Meta:
+        model = models.Patron
+        fields = ['name','sex','age','city']
+
+class UMain(serializers.ModelSerializer):
+    class Meta:
+        model = models.Proprietor
+        fields = ['name','age','car_model']
 
 class SetTrip(serializers.ModelSerializer):
     class Meta:
-        model = models.trip
+        model = models.Trip
         fields = ['patron','distance','time']

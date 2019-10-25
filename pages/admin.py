@@ -5,10 +5,10 @@ from . import models
 # Register your models here.
 class UserAdmin(BaseUserAdmin):
         ordering = ['id']
-        list_display = ['email','name']
+        list_display = ['email']
         fieldsets = (
             (None,{'fields':('email',)}),
-            (_('Personal Info'),{'fields':('name',)}),
+            (_('Personal Info'),{'fields':('',)}),
             (_('Permissions'),{'fields':('is_proprietor','is_staff','is_superuser')}),
         )
         add_fieldsets = (
@@ -20,4 +20,4 @@ class UserAdmin(BaseUserAdmin):
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Patron)
 admin.site.register(models.Proprietor)
-admin.site.register(models.trip)
+admin.site.register(models.Trip)
