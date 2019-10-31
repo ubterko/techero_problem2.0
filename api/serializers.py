@@ -29,11 +29,8 @@ class CreatePatron(serializers.ModelSerializer):
     """This is the serializer for creating patron user"""
 
     class Meta:
-        model = get_user_model()
-        fields = ['email','password','name']
-
-    def create(self, validated_data):
-        return get_user_model().objects.create_user(**validated_data)
+        model = models.Patron
+        fields = ['user','name','age','sex','city']
 
 class AuthTokenSerializer(serializers.Serializer):
     """Serializer for creating a token for authentication"""
@@ -57,12 +54,6 @@ class AuthTokenSerializer(serializers.Serializer):
 
         attrs['user'] = user
         return attrs
-
-#class ProprietorDashboard(serializers.ModelSerializer):
-#    class Meta:
-#        model = models.Proprietor
-#        fields = ['name','liscence_no','']
-
 
 class ProprietorProfile(serializers.ModelSerializer):
     class Meta:

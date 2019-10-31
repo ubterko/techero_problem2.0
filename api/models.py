@@ -46,12 +46,12 @@ class Proprietor(AbstractUser):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     car_model = models.CharField(max_length=30)
     liscnece_no = models.CharField(max_length=15)
-    wage = models.CharField(max_length=7)
+    wage = models.CharField(max_length=7, null=True)
 
 
 class Patron(AbstractUser):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    fare = models.CharField(max_length=9)
+    fare = models.CharField(max_length=9, null=True)
 
 
 class Trip(models.Model):
