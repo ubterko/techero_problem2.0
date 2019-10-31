@@ -4,7 +4,7 @@ from rest_framework.settings import api_settings
 from rest_framework.authtoken.views import ObtainAuthToken
 
 from . import serializers
-from pages.models import Proprietor
+from .models import Proprietor
 
 class CreateUserView(generics.CreateAPIView):
 	serializer_class = serializers.CreateUser

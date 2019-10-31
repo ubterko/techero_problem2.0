@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.utils.translation import gettext as _
 from django.contrib.auth import get_user_model, authenticate
-from pages import models
+from . import models
 
 
 class CreateUser(serializers.ModelSerializer):
