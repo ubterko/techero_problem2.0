@@ -14,9 +14,12 @@ class PatronTests(TestCase):
             email='testuser@gmail.com',
             password='testpass123'
     )
+        self.client.force_authenticate(
+            user=self.user
+    )
 
     def test_patron_create(self):
-      data = {'user':self.user,
+      data = {#'user':self.user,
               'name':'Ada',
               'age':'23',
               'sex':'Female',

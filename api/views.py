@@ -30,7 +30,7 @@ class PatronProfile(generics.RetrieveAPIView):
 	serializer_class = serializers.PatronProfile
 
 class Home(generics.ListAPIView):
-	serializer_class = serializers.UMain
+	serializer_class = serializers.Home
 	queryset = Proprietor.objects.all()
 
 class SetTrip(generics.RetrieveAPIView):

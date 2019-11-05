@@ -16,14 +16,11 @@ class CreateProprietor(serializers.ModelSerializer):
     """This is the serializer for creating proprietor user"""
 
     class Meta:
-        model = get_user_model()
+        model = models.Proprietor
         fields = [
-            'email','password','name',
-            'is_proprietor',
+            'user','name','age','sex','city',
+            'liscence_no','car_model'
         ]
-
-    def create(self, validated_data):
-        return get_user_model().objects.create_user(**validated_data)
 
 class CreatePatron(serializers.ModelSerializer):
     """This is the serializer for creating patron user"""
@@ -65,7 +62,7 @@ class PatronProfile(serializers.ModelSerializer):
         model = models.Patron
         fields = ['name','sex','age','city']
 
-class UMain(serializers.ModelSerializer):
+class Home(serializers.ModelSerializer):
     class Meta:
         model = models.Proprietor
         fields = ['name','age','car_model']
