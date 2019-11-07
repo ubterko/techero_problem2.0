@@ -7,7 +7,7 @@
 		<title>TECHERO</title>
 	</head>
 	<body>
-		
+
 		<div id="heading"><h1>UberX</h1></div>
 		{% block content %}
 		<center><div id="service-detail"><h2>Port Harcourt To Warri </h2>
@@ -15,9 +15,13 @@
 			<h3>Time: 2 hrs</h3>
 		</div>
 		<form>
+			<script
+			  src="http://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>">
 			<script type="text/javascript" src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
 			<button type="button" onClick="payWithRave()" id="paybtn" >Pay Now</button>
 		</form></center>
-		{% endblock content%}	
+		{% endblock content%}
 	</body>
 </html>
