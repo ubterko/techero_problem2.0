@@ -1,6 +1,6 @@
 //contains code for api calls
 
-xhl = XMLHttpRequest;
+xhl = new XMLHttpRequest();
 
 xhl.open('GET', '', true)
 
