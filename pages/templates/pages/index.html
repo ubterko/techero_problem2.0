@@ -1,31 +1,66 @@
-{% load static %}
-<!doctype html>
-<html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="{% static 'pages/css/style.css' %}">
-		<link href="{% static 'pages/css/css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
-		<link href="{% static 'pages/css/css/bootstrap-theme.css' %}" rel="stylesheet" type="text/css"/>
-		<script src="{% static 'pages/js/js/bootstrap.min.js' %}"></script>
-		<script  type="text/javascript" src="{% static 'pages/js/raveinline.js' %}"></script>
-		<title>TECHERO</title>
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=viewport-width">
+    <title>Ride Share</title>
+    <link rel="stylesheet" href="master.css">
+  </head>
+  <body>
 
-		<div id="heading"><h1>UberX</h1></div>
-		{% block content %}
-		<center><div id="service-detail"><h2>Port Harcourt To Warri </h2>
-			<h3>Price: 2000</h3>
-			<h3>Time: 2 hrs</h3>
-		</div>
-		<form>
-			<script
-			  src="http://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous"></script>">
-				<script type="text/javascript" src="{static 'pages/js/api_calls.js'}"></script>
-			<script type="text/javascript" src="https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/flwpbf-inline.js"></script>
-			<button type="button" onClick="payWithRave()" id="paybtn" >Pay Now</button>
-		</form></center>
-		{% endblock content%}
-	</body>
+    <header>
+      <nav>
+        <h1><span class="highlight">Ride</span> Share</h1>
+        <div class="bar-items">
+          <ul>
+            <li class="sign-up"><a href="#">Sign-in</a></li>
+            <li><a href="#">Sign-up</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section id="showcase">
+      <div class="container">
+        <h1>Share a Ride</h1>
+        <p>We connect you to riders that don't mind giving you a ride to your desired destination for a token.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="proprietor-signup">
+          <h1>Are you a ride owner?</h1>
+          <p>Do you own a ride and will love to help get patrons to their destination? Become a self employed individual today by signing-up to be a Ride Share proprietor.</p>
+          <p class="sign-up"><a href="#">Sign-up</a></p>
+
+          <div class="signup-form">
+            <form action="" method="post">
+              <input type="email" name="email" value="Enter your email">
+              <input type="password" name="password" value="Enter a password">
+              <button type="submit" name="Save">Save</button>
+            </form>
+          </div>
+        </div>
+        <div class="patron-signup">
+          <h1>Are you in need of a Ride?</h1>
+          <p>Sign-up today and get access to hundreds of riders who are willing to share their rides for a little fare.</p>
+          <p class="sign-up"><a href="#">Sign-up</a></p>
+          
+          <div class="signup-form">
+            <form action="" method="post">
+              <input type="email" name="email" value="Enter your email">
+              <input type="password" name="password" value="Enter a password">
+              <button type="submit" name="Save">Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Ride Share, Copyright &copy;2020</p>
+    </footer>
+
+  </body>
 </html>
