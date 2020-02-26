@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+}
+
+body #header {
+  background: white;
+  width: 100%;
+  margin: 0;
+  -webkit-box-shadow: 10px;
+          box-shadow: 10px;
+}
+
+body #header #nav-bar {
+  padding: 15px;
+}
+
+body #header #nav-bar h1 {
+  display: inline;
+  font-size: 3em;
+}
+
+body #header #nav-bar h1 span {
+  color: #f3957e;
+}
+
+body #header #nav-bar ul {
+  list-style-type: none;
+  float: right;
+  margin: 16px;
+}
+
+body #header #nav-bar ul li {
+  padding: 15px;
+  display: inline;
+}
+
+body #header #nav-bar ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: xx-large;
+}
+
+body #bg {
+  -webkit-clip-path: circle(50.3% at 15% 7%);
+          clip-path: circle(50.3% at 15% 7%);
+  position: absolute;
+  background: #f3957e;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+body .content {
+  padding: 100px;
+}
+
+body .content #showcase {
+  padding: 50px;
+  -webkit-box-shadow: floralwhite;
+          box-shadow: floralwhite;
+  border-radius: 5px;
+  font-style: oblique;
+}
+
+body .signup-form input {
+  display: block;
+  height: 100px;
+  width: 700px;
+  border: none;
+  margin: 15px;
+}
+
+body .signup-form button {
+  height: 100px;
+  width: 200px;
+  border: 1px solid #f3957e;
+  background: white;
+  border-radius: 10px;
+}
+
+body #reg-sect a {
+  text-decoration: none;
+  padding: 15px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+body #footer {
+  bottom: 0;
+  width: 100%;
+}
+/*# sourceMappingURL=main.css.map */

@@ -9,3 +9,6 @@ def success(request):
 
 def err(request):
 	return render(request, 'pages/errorpage.html', {})
+
+def register(request):
+	return render(request, 'pages/register.html', {})

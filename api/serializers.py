@@ -5,8 +5,14 @@ from . import models
 
 
 class CreateUser(serializers.ModelSerializer):
+    email = serializers.CharField(max_length=255)
+    password = serializers.CharField(
+        max_length=16,
+        style={'input_type':'password'},
+    )
+
     class Meta:
-        model = get_user_model
+        model = get_user_model()
         fields = ['email','password']
 
     def create(self, validated_data):
@@ -21,6 +27,13 @@ class CreateProprietor(serializers.ModelSerializer):
             'user','name','age','sex','city',
             'liscence_no','car_model'
         ]
+
+    def validate_liscence_no(self, value):
+        if len(value) == 15:
+            return value
+        else:
+            return _('Invalide value for liscence number')
+
 
 class CreatePatron(serializers.ModelSerializer):
     """This is the serializer for creating patron user"""

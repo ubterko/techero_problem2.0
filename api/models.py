@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.conf import settings
 
+
 class UserManager(BaseUserManager):
     def create_user(self,email, password=None, **extra_fields):
         user = self.model(email=self.normalize_email(email), **extra_fields)
@@ -51,7 +52,7 @@ class Proprietor(AbstractUser):
 
 class Patron(AbstractUser):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    fare = models.CharField(max_length=9, null=True)
+    fare = models.CharField(max_length=9, null=True, blank=True)
 
 
 class Trip(models.Model):

@@ -6,4 +6,5 @@ urlpatterns = [
 	path('', views.index),
 	path('successpage/', views.success),
 	path('errorpage/', views.err),
+	path('register/', views.register),
 ]
